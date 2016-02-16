@@ -15,8 +15,8 @@ class Server
 	 */
 	constructor( ip, port )
 	{
-		this.ip = ip;
-		this.port = port;
+		this.ip = ip || process.env.HTTP_HOST || 'localhost';
+		this.port = port || process.env.HTTP_PORT || 1337;
 		this.routes = [];
 		this.middleware = [];
 		this.endpoints = {};
@@ -25,7 +25,7 @@ class Server
 			this.handleRequest( req, res );
 		});
 
-		this.http.listen(this.port, () => {
+		this.http.listen(this.port, this.host, () => {
 			console.log("HTTP listening on http://%s:%s", this.ip, this.port);
 		});
 
