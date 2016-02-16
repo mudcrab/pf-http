@@ -10,6 +10,6 @@
 	"lodash": "^4.3.0",
 	"route-parser": "0.0.4"
   },
-  "author": "",
+  "author": "Jevgeni <jevgeni@pitfire.io> (https://pitfire.io)",
   "license": "MIT"
 }
